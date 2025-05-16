@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 59, 130, 246;
+  --color-secondary: 139, 92, 246;
+  --color-accent: 249, 115, 22;
+  --color-success: 16, 185, 129;
+  --color-warning: 245, 158, 11;
+  --color-error: 239, 68, 68;
+  --color-background: 255, 255, 255;
+  --color-foreground: 15, 23, 42;
+}
+
+.dark {
+  --color-primary: 96, 165, 250;
+  --color-secondary: 167, 139, 250;
+  --color-accent: 251, 146, 60;
+  --color-success: 34, 197, 94;
+  --color-warning: 251, 191, 36;
+  --color-error: 248, 113, 113;
+  --color-background: 15, 23, 42;
+  --color-foreground: 248, 250, 252;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-background text-foreground transition-colors duration-200;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 focus:ring-primary/50;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 focus:ring-secondary/50;
+  }
+  
+  .btn-danger {
+    @apply bg-error text-white hover:bg-error/90 focus:ring-error/50;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all duration-200;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+  }
+  
+  .alert {
+    @apply p-4 rounded-md mb-4;
+  }
+  
+  .alert-success {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+  
+  .alert-warning {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+  
+  .alert-error {
+    @apply bg-error/10 text-error border border-error/20;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-success {
+    @apply bg-success/10 text-success;
+  }
+  
+  .badge-warning {
+    @apply bg-warning/10 text-warning;
+  }
+  
+  .badge-error {
+    @apply bg-error/10 text-error;
+  }
+}
+
+/* AI Monitoring animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.monitoring-indicator {
+  @apply inline-flex items-center text-xs font-medium;
+  animation: pulse 2s infinite;
+}
+
+.monitoring-active {
+  @apply text-success;
+}
+
+.monitoring-warning {
+  @apply text-warning;
+}
+
+.monitoring-error {
+  @apply text-error;
+}
+
+/* Transitions for page elements */
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.page-enter {
+  @apply opacity-0 transform translate-y-4;
+}
+
+.page-enter-active {
+  @apply opacity-100 transform translate-y-0;
+}
+
+.page-exit {
+  @apply opacity-100 transform translate-y-0;
+}
+
+.page-exit-active {
+  @apply opacity-0 transform translate-y-4;
+}

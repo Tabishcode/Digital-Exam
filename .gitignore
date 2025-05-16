@@ -1,0 +1,31 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.env
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Ignore specific files in the parent directory
+/AI_ZeroTrust_Project_TabishAkhtar.zip
+/Secure Exam.pptx
+/Video Link.txt
+/WhatsApp Image 2025-05-01 at 16.20.12_9a4a6663.jpg
+/backend.zip
+/frontend.zip
